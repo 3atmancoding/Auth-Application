@@ -1,5 +1,5 @@
 import { SET_CURRENT_USER, USER_LOADING } from "../actions/types";
-const isEmpty = require("is-empty"); //to check if user field is not empty
+const isEmpty = require("is-empty"); //to check if user field is not empty//
 const initialState = {
   isAuthenticated: false,
   user: {},
