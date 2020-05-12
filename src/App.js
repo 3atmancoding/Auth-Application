@@ -5,6 +5,8 @@ import styled from "styled-components";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Colors from "./ui-styles/colors";
+import { Provider } from "react-redux";
+import store from "./store";
 const Nav = styled.nav`
   background-color: #ffffff;
   height: 50px;
@@ -29,34 +31,36 @@ const Links = styled(Link)`
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-        <Nav>
-          <Ul>
-            <Li>
-              <Links to="/">Home</Links>
-            </Li>
-            <Li>
-              <Links to="/register">Register</Links>
-            </Li>
-            <Li>
-              <Links to="/login">Login</Links>
-            </Li>
-          </Ul>
-        </Nav>
-        <Switch>
-          <Route exact path="/">
-            <Landing />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-        </Switch>
-      </div>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div>
+          <Nav>
+            <Ul>
+              <Li>
+                <Links to="/">Home</Links>
+              </Li>
+              <Li>
+                <Links to="/register">Register</Links>
+              </Li>
+              <Li>
+                <Links to="/login">Login</Links>
+              </Li>
+            </Ul>
+          </Nav>
+          <Switch>
+            <Route exact path="/">
+              <Landing />
+            </Route>
+            <Route exact path="/register">
+              <Register />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
