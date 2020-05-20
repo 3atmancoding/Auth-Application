@@ -1,4 +1,4 @@
-//Common file for all color hexcodes
+//Common file for all color
 const Colors = {
   //Navigation colors
   navBarColor: "#474747",
